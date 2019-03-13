@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Example 1, events overview</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="css/seaLife.css">
+</head>
+<body>
+  
+<!--  header>h1{Sea Life}^section>article*3>h3{Some heading $}+p>lorem-->
+   <header>
+       <h1>Sea Life</h1>
+   </header>
+   <section>
+       <article>
+           <h3>Some heading 1</h3>
+           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore veniam quibusdam, neque eius a eos officiis debitis fuga ab iste rem, nemo nihil temporibus fugit laudantium quo libero iusto ipsum.</p>
+       </article>
+       <article>
+           <h3>Some heading 2</h3>
+           <p>Doloribus totam aut amet voluptatibus quod eveniet aliquid ipsa assumenda in delectus, sit perspiciatis tenetur est laboriosam laudantium, sunt aperiam! Harum voluptas repudiandae reiciendis doloribus facere illo! Quidem, a sint!</p>
+       </article>
+       <article>
+           <h3>Some heading 3</h3>
+           <p>Nostrum unde hic explicabo placeat dolores officiis, delectus fugiat accusantium? Sint, numquam. Consequatur nisi odit veniam fuga magnam, dolore maiores voluptatem praesentium dolor illo saepe perferendis, provident delectus iste neque?</p>
+       </article>
+   </section>
+   <aside>
+       <h1>Coral Reefs</h1>
+       <h2>They are important for everyone</h2>
+       <div>
+           <a href="#" class="discoverBtn">Discover more</a>
+           <a href="#" class="tripBtn">Join us</a>
+       </div>
+       <p class="tripMsg">We are so sorry but all of our 2019 trips are currently booked. Please check back in the fall when new 2020 trip information is available</p>
+   </aside>
+   <article>
+       <h2>Heading</h2>
+       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio mollitia molestiae assumenda adipisci eligendi pariatur, ipsam laudantium magnam temporibus doloremque. Error blanditiis libero assumenda, temporibus ratione sed ducimus harum perferendis.</p>
+   </article>
+   <footer>&copy; 2019</footer>
+    
+   <script>
+    <!--https://developer.mozilla.org/en-US/docs/web/events-->
+        const TRIPBTN = document.querySelector('.tripBtn');
+        const MSG = document.querySelector('.tripMsg');
+       
+        MSG.classList.add('hideIt');
+
+       function showMsg(e){
+           e.preventDefault();
+           MSG.classList.toggle('hideIt');
+       }
+       
+       //TRIPBTN.onclick = showMsg;
+       //TRIPBTN.onclick = console.log('the button has been clicked');
+       
+       TRIPBTN.addEventListener('click',showMsg,false);
+       TRIPBTN.addEventListener('click', function()
+       {console.log('the button has been clicked');}, false );
+    </script>
+     
+    
+</body>
+</html>
